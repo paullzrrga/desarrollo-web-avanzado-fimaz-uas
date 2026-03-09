@@ -1,0 +1,5 @@
+En esta práctica, utilicé la clase Usuario como clase padre, la cual gestiona los
+ atributos de nombre y correo. Implementé una validación crítica mediante un condicional if y throw 
+ new Exception para asegurar que el correo tenga el formato correcto; 
+esta seguridad se aplica tanto en el constructor como en el setter,
+ garantizando que nunca se guarde un correo inválido.

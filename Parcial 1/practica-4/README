@@ -1,0 +1,9 @@
+validación para diferentes tipos de usuarios como Admin, Alumno e Invitado utilizando PHP 8. 
+La base de todo es la clase Usuario, la cual funciona como clase padre y se encarga de recibir
+ el nombre y el correo; para proteger los datos, incluí una validación con Exception que lanza 
+ un error si el correo no tiene el formato correcto.
+Las clases Admin y Alumno heredan de Usuario, lo que significa que aprovechan sus atributos pero 
+cada una tiene su propio método getRol(). En el caso de la clase Alumno, también añadí un atributo 
+especial para la matrícula. Para que el sistema sea seguro, en el archivo index.php utilicé bloques 
+try-catch que atrapan cualquier error 
+en el correo sin que la aplicación deje de funcionar.
