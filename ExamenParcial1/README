@@ -1,9 +1,0 @@
-Este proyecto usa la jerarquía de herencia donde la clase base Usuario centraliza el nombre y la validación 
-del correo electrónico. A partir de ella, se extienden 
-las clases Alumno (que añade una matrícula) y Admin (que define un rol específico), permitiendo que ambas 
-reutilicen la lógica del padre mientras mantienen sus atributos únicos.
-
-En la fase de ejecución, el script agrupa objetos de estas clases en un arreglo dinámico para procesarlos de 
-forma uniforme. Finalmente, la información se despliega en una tabla HTML, utilizando el operador instanceof 
-para identificar el tipo de objeto en cada fila y mostrar correctamente si se trata de una matrícula escolar o
- un cargo administrativo.
