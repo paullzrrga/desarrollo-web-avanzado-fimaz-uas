@@ -1,0 +1,50 @@
+<?php
+        require_once("../../constroller/torneosController.php");
+        require_once("../admin/template/header.php");
+        //instanciamos el controlador para ejecutar consulta
+        $objTorneosController = new torneosController();
+        $rows = $objTorneosController->readTorneos();
+?>
+
+<div class="card text-center">
+                <div class="card-header">
+                    Tabla de torneos
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th  scope="col">Torneo</th>
+                                <th  scope="col">Organizador</th>
+                                <th  scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if($rows): ?>
+                                <tr>
+                                    <th><?= $row['id']?></th>
+                                    <th><?= $row['nombreTorneo']?></th>
+                                    <th><?= $row['organizador']?></th>
+                                    <th>
+                                        Acciones: Editar, Eliminar
+                                        <a href="readOneTorneos.php?id=<? $row['id'] ?>" class="btn btn-primary">consultar</a>
+                                        <a href="updateTorneo.php?id=<? $row['id'] ?>" class="btn btn-primary">editar</a>
+
+                                    </th>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="3">No hay torneos registrados</td> 
+                            </tr>
+                        <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+             </div>  
+
+
+<?php
+            require_once("../admin/template/footer.php");
+?>
